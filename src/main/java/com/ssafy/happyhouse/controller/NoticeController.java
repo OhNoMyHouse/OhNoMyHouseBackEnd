@@ -12,7 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-//@RequestMapping("/notice")
+@RequestMapping("/notice")
 @RestController
 @CrossOrigin
 public class NoticeController {
@@ -22,7 +22,7 @@ public class NoticeController {
 
     private static final Logger logger = LoggerFactory.getLogger(NoticeController.class);
 
-    @GetMapping("/notice")
+    @GetMapping
     private ResponseEntity<List<Notice>> selectNoticeList() {
         logger.debug("call by selectNoticeList");
         List<Notice> list = noticeService.selectNoticeList();
@@ -39,7 +39,7 @@ public class NoticeController {
         return ResponseEntity.notFound().build();
     }
 
-    @PostMapping("/notice")
+    @PostMapping
     private ResponseEntity insertNotice(@RequestBody Notice notice) {
         logger.debug("call by insertNotice");
         noticeService.insertNotice(notice);
