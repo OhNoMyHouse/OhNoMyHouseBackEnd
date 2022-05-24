@@ -1,16 +1,16 @@
 package com.ssafy.happyhouse.model.service;
 
-import java.util.Map;
-
 import com.ssafy.happyhouse.model.dto.User;
 
 public interface UserService {
 
-	boolean registUser(User user);
-
-	String login(Map<String, String> map);
+	User login(User user) throws Exception;
+	
+	public User userInfo(String userid) throws Exception;
 
 	User getUser(String userid);
+	
+	boolean registUser(User user);
 
 	boolean update(User user);
 

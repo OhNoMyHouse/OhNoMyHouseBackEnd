@@ -12,16 +12,23 @@ import com.ssafy.happyhouse.model.dto.User;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    UserMapper userMapper;
+    private UserMapper userMapper;
+    
+    @Override
+	public User login(User user) throws Exception {
+		if(user.getUserid() == null || user.getPassword() == null)
+			return null;
+		return userMapper.login(user);
+	}
+
+	@Override
+	public User userInfo(String userid) throws Exception {
+		return userMapper.userInfo(userid);
+	}
 
 	@Override
 	public boolean registUser(User user) {
         return userMapper.registUser(user);
-    }
-
-    @Override
-	public String login(Map<String, String> map) {
-        return userMapper.login(map);
     }
 
     @Override
