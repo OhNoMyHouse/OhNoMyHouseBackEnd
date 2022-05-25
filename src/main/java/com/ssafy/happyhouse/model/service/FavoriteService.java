@@ -8,7 +8,7 @@ public interface FavoriteService {
 
     List<Favorite> selectFavoriteList();
 
-    Favorite selectFavorite(int idx);
+    int selectFavorite(String aptName);
 
     boolean insertFavorite(Favorite favorite);
 

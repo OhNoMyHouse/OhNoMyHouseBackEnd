@@ -19,8 +19,8 @@ public class FavoriteServiceImpl implements FavoriteService {
     }
 
     @Override
-    public Favorite selectFavorite(int idx) {
-        return favoriteMapper.selectFavorite(idx);
+    public int selectFavorite(String aptName) {
+        return favoriteMapper.selectFavorite(aptName);
     }
 
     @Override
