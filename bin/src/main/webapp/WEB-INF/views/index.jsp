@@ -15,7 +15,7 @@
         <div id="introCarousel" class="carousel slide carousel-fade" data-ride="carousel">
             <ol class="carousel-indicators"></ol>
             <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active" style="background-image: url('img/intro-carousel/1.jpg')">
+                <div class="carousel-item active" style="background-image: url('/img/intro-carousel/1.jpg')">
                     <div class="carousel-container">
                         <div class="carousel-content">
                             <h2>나는 집이 없어 행복하지 않아요.</h2>
@@ -24,7 +24,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="carousel-item" style="background-image: url('img/intro-carousel/2.jpg')">
+                <div class="carousel-item" style="background-image: url('/img/intro-carousel/2.jpg')">
                     <div class="carousel-container">
                         <div class="carousel-content">
                             <h2>서울에서 나의 집을 찾고 싶다고요?</h2>
@@ -34,7 +34,7 @@
                     </div>
                 </div>
 
-                <div class="carousel-item" style="background-image: url('img/intro-carousel/3.jpg')">
+                <div class="carousel-item" style="background-image: url('/img/intro-carousel/3.jpg')">
                     <div class="carousel-container">
                         <div class="carousel-content">
                             <h2>우리가 당신을 도와드립니다.</h2>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
 
-                <div class="carousel-item" style="background-image: url('img/intro-carousel/4.jpg')">
+                <div class="carousel-item" style="background-image: url('/img/intro-carousel/4.jpg')">
                     <div class="carousel-container">
                         <div class="carousel-content">
                             <h2>내 집 마련이 고민이라고요?</h2>
@@ -54,7 +54,7 @@
                     </div>
                 </div>
 
-                <div class="carousel-item" style="background-image: url('img/intro-carousel/5.jpg')">
+                <div class="carousel-item" style="background-image: url('/img/intro-carousel/5.jpg')">
                     <div class="carousel-container">
                         <div class="carousel-content">
                             <h2>내 연봉으로 집을 살 수 있을까 고민이라고요?</h2>
@@ -162,108 +162,35 @@
         <div class="container">
             <header class="section-header">
                 <h3>아파트 조회</h3>
-                <div class="row about-cols">
-                    <div class="box flex">
-                        <form name="sigundongForAptInfo" id="sigundongForAptInfo">
-                            <select name="sido" id="sido">
-                                <option value="*">시/도</option>
-                            </select>
-                            <select name="gugun" id="gugun">
-                                <option value="*">구/군</option>
-                            </select>
-                            <select name="dong" id="dong">
-                                <option value="*">동</option>
-                            </select>
-                            <button type="button" onclick="submitSigundongForAptInfo()">조회</button>
-                        </form>
+                <div class="row about-cols flex">
+                    <div class="box form-inline justify-content-center">
+                        <select class="form-control" id="sido">
+                            <option value="*">시/도</option>
+                        </select>
+                        <select class="form-control" id="gugun">
+                            <option value="*">구/군</option>
+                        </select>
+                        <select class="form-control" id="dong">
+                            <option value="*">동</option>
+                        </select>
                     </div>
                 </div>
                 <p>원하는 지역의 아파트를 조회할 수 있습니다.</p>
-            </header>
-
-            <div class="row about-cols">
-                <!-- Map Position -->
-                <div>
-                    <!-- 실거래 정보 출력 -->
-                    <h5>거래 정보</h5>
-                    <div style="overflow:auto;width:200px; height: 450px" id="aptInfoByDongCode">
-                    </div>
-                </div>
-                <div id="map1" style="width: 380px; height: 450px"></div>
-            </div>
-        </div>
-    </section>
-    <!-- #about -->
-
-    <!--==========================
-      아파트별 실거래가 조회 Us Section
-    ============================-->
-    <section class="about" id="2">
-        <div class="container">
-            <header class="section-header">
-                <h3>아파트별 실거래가 조회</h3>
-
                 <div class="row about-cols">
                     <div class="box flex">
-                        <form name="aptNameForAptDeal" id="aptNameForAptDeal">
-                            <input type="text" name="AptName" id="AptName"/>
-                            <button type="button" onclick="submitAptNameForAptDeal()">조회</button>
-                        </form>
+                        <input type="text" id="word"/>
                     </div>
                 </div>
-                <p>아파트 이름으로 실거래가를 조회할 수 있습니다.</p>
+                <p>원하는 아파트 이름으로 실거래가를 조회할 수 있습니다.</p>
             </header>
 
             <div class="row about-cols">
-                <!-- Map Position -->
                 <div>
-                    <!-- 실거래 정보 출력 -->
                     <h5>거래 정보</h5>
-                    <div style="overflow:auto;width:200px; height: 450px" id="aptDealByAptName">
+                    <div style="overflow:auto; width:200px; height: 450px" id="aptInfoByDongCode">
                     </div>
                 </div>
-                <div id="map2" style="width: 380px; height: 450px"></div>
-            </div>
-        </div>
-    </section>
-    <!-- #about -->
-
-    <!--==========================
-      동별 실거래가 조회 Us Section
-    ============================-->
-    <section class="about" id="3">
-        <div class="container">
-            <header class="section-header">
-                <h3>동별 실거래가 조회</h3>
-                <div class="row about-cols">
-                    <div class="box flex">
-                        <form name="sigundongForAptDeal" id="sigundongForAptDeal">
-                            <select name="sido1" id="sido1">
-                                <option value="*">시/도</option>
-                            </select>
-                            <select name="gugun1" id="gugun1">
-                                <option value="*">구/군</option>
-                            </select>
-                            <select name="dong1" id="dong1">
-                                <option value="*">동</option>
-                            </select>
-                            <button type="button" onclick="submitSigundongForAptDeal()">조회</button>
-
-                        </form>
-                    </div>
-                </div>
-                <p>원하는 지역의 동별 아파트 실거래가를 조회할 수 있습니다.</p>
-            </header>
-
-            <div class="row about-cols">
-                <!-- Map Position -->
-                <div>
-                    <!-- 실거래 정보 출력 -->
-                    <h5>거래 정보</h5>
-                    <div style="overflow:auto;width:200px; height: 450px" id="aptDealByDongCode">
-                    </div>
-                </div>
-                <div id="map3" style="width: 380px; height: 450px"></div>
+                <div id="map1" style="width: 380px; height: 450px;"></div>
             </div>
         </div>
     </section>
@@ -285,36 +212,6 @@
                     <!-- 실거래 정보 출력 -->
                     <div>
                         <h5>거래 정보</h5>
-                        <p style="border-bottom: solid gray 1px; font-size: 10px; margin-top: -15px;">
-                            e편한 세상<br>
-                            거래 금액: 52,200만원<br>
-                            면적: 84.965<br>
-                            날짜: 2019.12.16.<br>
-                        </p>
-                        <p style="border-bottom: solid gray 1px; font-size: 10px; margin-top: -15px;">
-                            e편한 세상<br>
-                            거래 금액: 52,200만원<br>
-                            면적: 84.965<br>
-                            날짜: 2019.12.16.<br>
-                        </p>
-                        <p style="border-bottom: solid gray 1px; font-size: 10px; margin-top: -15px;">
-                            e편한 세상<br>
-                            거래 금액: 52,200만원<br>
-                            면적: 84.965<br>
-                            날짜: 2019.12.16.<br>
-                        </p>
-                        <p style="border-bottom: solid gray 1px; font-size: 10px; margin-top: -15px;">
-                            e편한 세상<br>
-                            거래 금액: 52,200만원<br>
-                            면적: 84.965<br>
-                            날짜: 2019.12.16.<br>
-                        </p>
-                        <p style="border-bottom: solid gray 1px; font-size: 10px; margin-top: -15px;">
-                            e편한 세상<br>
-                            거래 금액: 52,200만원<br>
-                            면적: 84.965<br>
-                            날짜: 2019.12.16.<br>
-                        </p>
                     </div>
                 </div>
                 <div id="map4" style="width: 380px; height: 450px"></div>
@@ -322,102 +219,6 @@
                 <!-- <div>
                   <a href="https://placeholder.com"><img src="http://via.placeholder.com/380x450"></a>
                 </div> -->
-            </div>
-        </div>
-    </section>
-    <!-- #about -->
-
-    <!--==========================
-      주변 상가 조회 Us Section
-    ============================-->
-    <section class="about" id="5">
-        <div class="container">
-            <header class="section-header">
-                <h3>주변 상가 조회</h3>
-                <div class="row about-cols">
-                    <div class="box flex">
-                        <form name="sigundongForSsgi" id="sigundongForSsgi">
-                            <select name="sido2" id="sido2">
-                                <option value="*">시/도</option>
-                            </select>
-                            <select name="gugun2" id="gugun2">
-                                <option value="*">구/군</option>
-                            </select>
-                            <select name="dong2" id="dong2">
-                                <option value="*">동</option>
-                            </select>
-                            <button type="button" onclick="submitSigundongForSsgi()">조회</button>
-
-                        </form>
-
-                    </div>
-                </div>
-                <p>원하는 지역의 주변 상가를 조회할 수 있습니다.</p>
-            </header>
-            <div class="row about-cols">
-                <!-- Map Position -->
-                <div>
-                    <!-- 실거래 정보 출력 -->
-                    <h5>상가 정보</h5>
-                    <div style="overflow:auto;width:200px; height: 450px" id="SsgiByDongCode">
-                    </div>
-
-                </div>
-                <div id="map5" style="width: 380px; height: 450px"></div>
-            </div>
-        </div>
-    </section>
-    <!-- #about -->
-
-    <!--==========================
-      주변 환경 Us Section
-    ============================-->
-    <section class="about" id="6">
-        <div class="container">
-            <header class="section-header">
-                <h3>주변 환경</h3>
-                <p>원하는 지역의 주변 환경을 조회 할 수 있습니다.</p>
-            </header>
-
-            <div class="row about-cols">
-                <!-- Map Position -->
-                <div>
-                    <!-- 실거래 정보 출력 -->
-                    <div>
-                        <h5>거래 정보</h5>
-                        <p style="border-bottom: solid gray 1px; font-size: 10px; margin-top: -15px;">
-                            e편한 세상<br>
-                            거래 금액: 52,200만원<br>
-                            면적: 84.965<br>
-                            날짜: 2019.12.16.<br>
-                        </p>
-                        <p style="border-bottom: solid gray 1px; font-size: 10px; margin-top: -15px;">
-                            e편한 세상<br>
-                            거래 금액: 52,200만원<br>
-                            면적: 84.965<br>
-                            날짜: 2019.12.16.<br>
-                        </p>
-                        <p style="border-bottom: solid gray 1px; font-size: 10px; margin-top: -15px;">
-                            e편한 세상<br>
-                            거래 금액: 52,200만원<br>
-                            면적: 84.965<br>
-                            날짜: 2019.12.16.<br>
-                        </p>
-                        <p style="border-bottom: solid gray 1px; font-size: 10px; margin-top: -15px;">
-                            e편한 세상<br>
-                            거래 금액: 52,200만원<br>
-                            면적: 84.965<br>
-                            날짜: 2019.12.16.<br>
-                        </p>
-                        <p style="border-bottom: solid gray 1px; font-size: 10px; margin-top: -15px;">
-                            e편한 세상<br>
-                            거래 금액: 52,200만원<br>
-                            면적: 84.965<br>
-                            날짜: 2019.12.16.<br>
-                        </p>
-                    </div>
-                </div>
-                <div id="map6" style="width: 380px; height: 450px"></div>
             </div>
         </div>
     </section>

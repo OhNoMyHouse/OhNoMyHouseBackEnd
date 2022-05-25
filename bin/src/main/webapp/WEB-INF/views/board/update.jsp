@@ -35,7 +35,7 @@
 <header id="header" style="background: rgba(0, 0, 0, 0.9); padding: 20px 0; height: 72px; transition: all 0.5s">
     <div class="container-fluid">
         <div id="logo" class="pull-left">
-            <h1><a href="${root}/index.jsp" class="scrollto">OhNoMyHouse</a></h1>
+            <h1><a href="${root}/" class="scrollto">OhNoMyHouse</a></h1>
         </div>
     </div>
 </header>
@@ -43,25 +43,35 @@
 <!--==========================
   Main
 ============================-->
-<div style="margin-top: 150px; " class="poll">
-    <h3 class="poll-title">공지사항 등록 하기</h3>
-    <div class="poll-content">
-        <form method="post" action="${root}/board/update.do">
-            <div class="poll-question">
-                <input type="text" name="idx" readonly="readonly" value="${board.idx}"/>
-                <br><br>
-                <input type="text" name="title" value="${board.title}"/>
-                <br><br>
-                <textarea class="form-control" name="content" rows="6" cols="60">${board.content}</textarea>
+    <main id="main">
+      <br />
+      <section id="services">
+        <div class="container">
+          <div class="col p-5 rounded ">
+            <header class="section-header wow fadeInUp">
+              <h3>공지사항 수정</h3>
+            </header>
+            <div class="poll-content">
+              <form method="post" action="${root}/board/update.do">
+                <input type="hidden" value="${board.idx}" name="idx">
+                <div class="mb-3 mt-3">
+                  <input type="text" class="form-control" id="title" placeholder="제목을 입력해주세요" value="${board.title}"
+                    name="title" required>
+                </div>
+                <div class="mb-3">
+                  <textarea class="form-control" rows="15" id="content" placeholder="내용을 입력해주세요" name="content"
+                    required>${board.content}</textarea>
+                </div>
+                <button type="submit" class="btn btn-outline-success">수정완료</button>
+                <button type="submit" class="btn btn-outline-danger"
+                  formaction="${root}/board/delete.do">삭제</button>
+                <a type="button" class="btn btn-outline-dark" href="${root}/">취소</a>
+              </form>
             </div>
-            <div class="poll-make mt-2 justify-content-center">
-                <input type="submit" value="수정하기"/>
-                <input type="submit" value="삭제하기" formaction="${root}/board/delete.do?idx=${board.idx}"/>
-                <input type="submit" value="취소" formaction="${root}/index.jsp"/>
-            </div>
-        </form>
-    </div>
-</div>
+          </div>
+        </div>
+      </section>
+    </main>
 <!--==========================
 Footer
 ============================-->

@@ -35,7 +35,7 @@
 <header id="header" style="background: rgba(0, 0, 0, 0.9); padding: 20px 0; height: 72px; transition: all 0.5s">
     <div class="container-fluid">
         <div id="logo" class="pull-left">
-            <h1><a href="${root}/index.jsp" class="scrollto">OhNoMyHouse</a></h1>
+            <h1><a href="${root}/" class="scrollto">OhNoMyHouse</a></h1>
         </div>
     </div>
 </header>
@@ -50,7 +50,7 @@
             <header class="section-header wow fadeInUp">
                 <h3>회원 가입</h3>
             </header>
-            <form method="post" action="${pageContext.request.contextPath}/user/regist.do">
+            <form method="post" action="${root}/user/regist.do">
                 <div class="col">
                     <div class="col-lg-4 col-md-6 box wow bounceInUp" data-wow-duration="1.4s" style="margin: auto">
                         <div class="icon"><i class="ion-ios-information"></i></div>

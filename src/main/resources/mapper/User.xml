@@ -8,7 +8,7 @@
 	<select id="login" parameterType="user"
 		resultType="user">
 		select name, userid, address
-		from ssafy_member
+		from userinfo
 		where userid
 		= #{userid} and password = #{password}
 	</select>
@@ -16,7 +16,7 @@
 	<select id="userInfo" parameterType="String"
 		resultType="user">
 		select name, userid, address
-		from ssafy_member
+		from userinfo
 		where userid = #{userid}
 	</select>
 
