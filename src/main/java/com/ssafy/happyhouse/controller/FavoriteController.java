@@ -2,6 +2,7 @@ package com.ssafy.happyhouse.controller;
 
 import com.ssafy.happyhouse.model.dto.Favorite;
 import com.ssafy.happyhouse.model.service.FavoriteService;
+import io.swagger.models.auth.In;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,12 +29,12 @@ public class FavoriteController {
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
-    @GetMapping("/{idx}")
-    private ResponseEntity<Favorite> selectFavorite(@PathVariable int idx) {
+    @GetMapping("/{aptName}")
+    private ResponseEntity<Integer> selectFavorite(@PathVariable String aptName) {
         logger.debug("call by selectFavorite");
-        Favorite favorite = favoriteService.selectFavorite(idx);
-        if (favorite != null) {
-            return ResponseEntity.ok(favorite);
+        int idx = favoriteService.selectFavorite(aptName);
+        if (idx > -1) {
+            return ResponseEntity.ok(idx);
         }
         return ResponseEntity.notFound().build();
     }
@@ -48,20 +49,14 @@ public class FavoriteController {
     @PutMapping("/{idx}")
     private ResponseEntity updateFavorite(@PathVariable int idx, @RequestBody Favorite favorite) {
         logger.debug("call by updateFavorite");
-        if (favoriteService.selectFavorite(idx) != null) {
-            favoriteService.updateFavorite(favorite);
-            return ResponseEntity.ok().build();
-        }
-        return ResponseEntity.notFound().build();
+        favoriteService.updateFavorite(favorite);
+        return ResponseEntity.ok().build();
     }
 
     @DeleteMapping("/{idx}")
     private ResponseEntity deleteFavorite(@PathVariable int idx) {
         logger.debug("call by deleteNotice");
-        if (favoriteService.selectFavorite(idx) != null) {
-            favoriteService.deleteFavorite(idx);
-            return ResponseEntity.noContent().build();
-        }
-        return ResponseEntity.notFound().build();
+        favoriteService.deleteFavorite(idx);
+        return ResponseEntity.noContent().build();
     }
 }

@@ -12,7 +12,7 @@
     <select id="selectNotice" resultType="Notice">
         SELECT *
         FROM notice
-        WHERE idx = ${idx}
+        WHERE idx = #{idx}
     </select>
 
     <insert id="insertNotice" parameterType="Notice">

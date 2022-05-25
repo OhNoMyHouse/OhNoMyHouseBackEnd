@@ -9,10 +9,10 @@
         FROM favorite;
     </select>
 
-    <select id="selectFavorite" resultType="Favorite">
-        SELECT *
+    <select id="selectFavorite" resultType="INT">
+        SELECT idx
         FROM favorite
-        WHERE idx = ${idx}
+        WHERE name like #{aptName}
     </select>
 
     <insert id="insertFavorite" parameterType="Favorite">
