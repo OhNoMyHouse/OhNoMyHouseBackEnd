@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.model.mapper.FavoriteMapper">
+
+    <select id="selectFavoriteList" resultType="Favorite">
+        SELECT *
+        FROM favorite;
+    </select>
+
+    <select id="selectFavorite" resultType="Favorite">
+        SELECT *
+        FROM favorite
+        WHERE idx = ${idx}
+    </select>
+
+    <insert id="insertFavorite" parameterType="Favorite">
+        INSERT INTO favorite (name, address, price)
+        VALUES (#{name}, #{address}, #{price})
+    </insert>
+
+    <update id="updateFavorite" parameterType="Favorite">
+        UPDATE favorite
+        SET name = #{name},
+            address = #{address},
+            price = #{price}
+        WHERE idx = #{idx}
+    </update>
+
+    <delete id="deleteFavorite">
+        DELETE
+        FROM favorite
+        WHERE idx = #{idx}
+    </delete>
+
+</mapper>

@@ -16,7 +16,7 @@
     </select>
 
     <insert id="insertNotice" parameterType="Notice">
-        INSERT INTO Notice (title, content)
+        INSERT INTO notice (title, content)
         VALUES (#{title}, #{content})
     </insert>
 
