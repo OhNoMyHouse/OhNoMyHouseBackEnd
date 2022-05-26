@@ -33,6 +33,7 @@ public class FavoriteController {
     private ResponseEntity<Integer> selectFavorite(@PathVariable String aptName) {
         logger.debug("call by selectFavorite");
         int idx = favoriteService.selectFavorite(aptName);
+        System.out.println(idx);
         if (idx > -1) {
             return ResponseEntity.ok(idx);
         }
