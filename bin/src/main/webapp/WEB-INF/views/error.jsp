@@ -35,7 +35,7 @@
 <header id="header" style="background: rgba(0, 0, 0, 0.9); padding: 20px 0; height: 72px; transition: all 0.5s">
     <div class="container-fluid">
         <div id="logo" class="pull-left">
-            <h1><a href="${root}/index.jsp" class="scrollto">OhNoMyHouse</a></h1>
+            <h1><a href="${root}/" class="scrollto">OhNoMyHouse</a></h1>
         </div>
     </div>
 </header>
@@ -46,7 +46,7 @@
 <div style="margin-top: 300px;">
     <h1> 실행 시 문제가 발생하였습니다. <br/> ${errorMsg} </h1>
     <%-- 홈으로 돌아가는 버튼 --%>
-    <a href="${root}/index.jsp">메인으로 이동</a>
+    <a href="${root}/">메인으로 이동</a>
 </div>
 <!--==========================
 Footer

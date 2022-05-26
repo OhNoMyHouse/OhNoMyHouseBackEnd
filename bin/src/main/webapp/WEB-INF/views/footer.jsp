@@ -40,22 +40,22 @@
 
 <!-- Template Main Javascript File -->
 <script src="${root}/js/main.js"></script>
-<script>
-    var container1 = document.getElementById('map1');
-    var container2 = document.getElementById('map2');
-    var container3 = document.getElementById('map3');
-    var container4 = document.getElementById('map4');
-    var container5 = document.getElementById('map5');
-    var container6 = document.getElementById('map6');
-    var options = {
-        center: new kakao.maps.LatLng(33.450701, 126.570667),
-        level: 3,
-    };
+<%--<script>--%>
+<%--    var container1 = document.getElementById('map1');--%>
+<%--    var container2 = document.getElementById('map2');--%>
+<%--    var container3 = document.getElementById('map3');--%>
+<%--    var container4 = document.getElementById('map4');--%>
+<%--    var container5 = document.getElementById('map5');--%>
+<%--    var container6 = document.getElementById('map6');--%>
+<%--    var options = {--%>
+<%--        center: new kakao.maps.LatLng(33.450701, 126.570667),--%>
+<%--        level: 3,--%>
+<%--    };--%>
 
-    var map1 = new kakao.maps.Map(container1, options);
-    var map2 = new kakao.maps.Map(container2, options);
-    var map3 = new kakao.maps.Map(container3, options);
-    var map4 = new kakao.maps.Map(container4, options);
-    var map5 = new kakao.maps.Map(container5, options);
-    var map6 = new kakao.maps.Map(container6, options);
-</script>
+<%--    var map1 = new kakao.maps.Map(container1, options);--%>
+<%--    var map2 = new kakao.maps.Map(container2, options);--%>
+<%--    var map3 = new kakao.maps.Map(container3, options);--%>
+<%--    var map4 = new kakao.maps.Map(container4, options);--%>
+<%--    var map5 = new kakao.maps.Map(container5, options);--%>
+<%--    var map6 = new kakao.maps.Map(container6, options);--%>
+<%--</script>--%>

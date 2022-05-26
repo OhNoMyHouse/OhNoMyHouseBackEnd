@@ -35,7 +35,7 @@
 <header id="header" style="background: rgba(0, 0, 0, 0.9); padding: 20px 0; height: 72px; transition: all 0.5s">
     <div class="container-fluid">
         <div id="logo" class="pull-left">
-            <h1><a href="${root}/index.jsp" class="scrollto">OhNoMyHouse</a></h1>
+            <h1><a href="${root}/" class="scrollto">OhNoMyHouse</a></h1>
         </div>
     </div>
 </header>
@@ -50,7 +50,7 @@
             <header class="section-header wow fadeInUp">
                 <h3>Login</h3>
             </header>
-            <form method="post" action="${pageContext.request.contextPath}/user/login.do">
+            <form method="post" action="${root}/user/login.do">
                 <div class="col">
                     <div class="col-lg-4 col-md-4 box wow bounceInUp" data-wow-duration="1.4s" style="margin: auto">
                         <div class="icon"><i class="ion-ios-information"></i></div>
@@ -73,10 +73,10 @@
                          style="margin: auto">
                         <p class="description">
                             <input type="submit" value="로그인">
-                            <input type="submit" value="비밀번호찾기" formaction="${root}/user/search_form.do">
+                            <input type="submit" value="비밀번호찾기" formaction="${root}/user/search_form.do" formmethod="get">
                             <input type="submit" value="취소" formaction="${root}/index.jsp">
                             <br>
-                            <button class="button" onclick="withdrawal()">회원탈퇴</button>
+                            <!-- <button class="button" onclick="withdrawal()">회원탈퇴</button> -->
                             <br> <br>
                         </p>
                     </div>

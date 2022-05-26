@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="com.ssafy.model.dto.User" %>
+<%@ page import="com.ssafy.happyhouse.model.dto.User" %>
 <html>
 <head>
     <meta charset="utf-8"/>
@@ -36,7 +36,7 @@
 <header id="header" style="background: rgba(0, 0, 0, 0.9); padding: 20px 0; height: 72px; transition: all 0.5s">
     <div class="container-fluid">
         <div id="logo" class="pull-left">
-            <h1><a href="${root}/index.jsp" class="scrollto">OhNoMyHouse</a></h1>
+            <h1><a href="${root}/" class="scrollto">OhNoMyHouse</a></h1>
         </div>
     </div>
 </header>
@@ -70,7 +70,7 @@
                         <div class="icon"><i class="ion-ios-locked"></i></div>
                         <h4 class="title">비밀번호</h4>
                         <p class="description">
-                            <input type="text" name="password" value="${user.password}"/>
+                            <input type="text" name="password" value="${user.password}" required/>
                         </p>
                     </div>
                     <br/>
@@ -81,7 +81,7 @@
                         <div class="icon"><i class="ion-ios-person"></i></div>
                         <h4 class="title">이름</h4>
                         <p class="description">
-                            <input type="text" name="name" value="${user.name}"/>
+                            <input type="text" name="name" value="${user.name}" required/>
                         </p>
                     </div>
                     <br/>

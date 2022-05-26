@@ -65,4 +65,8 @@ public class User {
         this.address = address;
         this.telephone = telephone;
     }
+    
+    public User() {
+    	super();
+    }
 }
